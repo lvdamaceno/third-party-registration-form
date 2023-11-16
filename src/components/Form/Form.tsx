@@ -1,6 +1,5 @@
-import { FormInput } from './FormInput'
-import { FormLabel } from './FormLabel'
-import { FormTextField } from './FormTextField'
+import { FormLabel } from '../Form/FormLabel'
+import { FormTextField } from '../Form/FormTextField'
 
 export function Form() {
     return (
@@ -229,6 +228,8 @@ export function Form() {
                     />
                 </div>
             </div>
+
+            {/* enviar o campo fornecedor por padrao no payload */}
 
             <div className="flex justify-end">
                 <button
