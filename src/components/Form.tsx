@@ -1,35 +1,29 @@
-import { Label } from './Label'
+import { FormInput } from './FormInput'
+import { FormLabel } from './FormLabel'
+import { FormTextField } from './FormTextField'
 
 export function Form() {
     return (
         <form className="flex flex-col gap-4" method="POST">
             {/* Nome completo */}
-            <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="nome completo" required />
-                <input
-                    className="text-sm outline-0 border-b border-zinc-300 focus:border-red-500"
-                    name="NOMEPARC"
-                    id="NOMEPARC"
-                    placeholder="Informe seu nome completo"
-                    required
-                />
-            </div>
+            <FormTextField
+                title="nome completo"
+                nameId="NOMEPARC"
+                placeholder="Informe seu nome completo"
+                required
+            />
 
             {/* CPF */}
-            <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="CPF" required />
-                <input
-                    className="text-sm outline-0 border-b border-zinc-300 focus:border-red-500"
-                    name="CGC_CPF"
-                    id="CGC_CPF"
-                    placeholder="Digite apenas os números do seu CPF"
-                    required
-                />
-            </div>
+            <FormTextField
+                title="cpf"
+                nameId="CGC_CPF"
+                placeholder="Digite apenas os números do seu CPF"
+                required
+            />
 
             {/* TELEFONE */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="TELEFONE COM DDD" required />
+                <FormLabel title="TELEFONE COM DDD" required />
                 <input
                     className="text-sm outline-0 border-b border-zinc-300 focus:border-red-500"
                     name="TELEFONE"
@@ -41,7 +35,7 @@ export function Form() {
 
             {/* E-MAIL */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="E-MAIL" required />
+                <FormLabel title="E-MAIL" required />
                 <input
                     className="text-sm outline-0 border-b border-zinc-300 focus:border-red-500"
                     name="EMAIL"
@@ -53,7 +47,7 @@ export function Form() {
 
             {/* CEP */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="CEP" required />
+                <FormLabel title="CEP" required />
                 <input
                     className="text-sm outline-0 border-b border-zinc-300 focus:border-red-500"
                     name="CEP"
@@ -65,7 +59,7 @@ export function Form() {
 
             {/* NÚMERO */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="NÚMERO" required />
+                <FormLabel title="NÚMERO" required />
                 <input
                     className="text-sm outline-0 border-b border-zinc-300 focus:border-red-500"
                     name="NUMEND"
@@ -76,19 +70,15 @@ export function Form() {
             </div>
 
             {/* COMPLEMENTO */}
-            <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="complemento" />
-                <input
-                    className="text-sm outline-0 border-b border-zinc-300 focus:border-red-500"
-                    name="COMPLEMENTO"
-                    id="COMPLEMENTO"
-                    placeholder="Informe um complemento se necessário"
-                />
-            </div>
+            <FormTextField
+                title="complemento"
+                nameId="COMPLEMENTO"
+                placeholder="Informe um complemento se necessário"
+            />
 
             {/* LOGRADOURO */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="logradouro" required />
+                <FormLabel title="logradouro" required />
                 <select name="CODEND" id="CODEND" required>
                     <option value="0">--</option>
                     <option value="427263">Padre Eutíquio</option>
@@ -98,7 +88,7 @@ export function Form() {
 
             {/* BAIRRO */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="bairro" required />
+                <FormLabel title="bairro" required />
                 <select name="CODBAI" id="CODBAI" required>
                     <option value="0">--</option>
                     <option value="5700">Batista Campos</option>
@@ -108,7 +98,7 @@ export function Form() {
 
             {/* CIDADE */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="cidade" required />
+                <FormLabel title="cidade" required />
                 <select name="CODCID" id="CODCID" required>
                     <option value="0">--</option>
                     <option value="4564">Abaetetuba</option>
@@ -119,7 +109,7 @@ export function Form() {
 
             {/* PROFISSAO */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="profissao" required />
+                <FormLabel title="profissao" required />
                 <p>
                     <strong>
                         Por favor, selecione abaixo sua profissão na área de
@@ -175,7 +165,7 @@ export function Form() {
 
             {/* REGISTRO PROFISSIONAL */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label
+                <FormLabel
                     title="Registro de conselho profissional relacionado à sua
                             área de atuação "
                     required
@@ -191,7 +181,7 @@ export function Form() {
 
             {/* PIX */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="CHAVE PIX" required />
+                <FormLabel title="CHAVE PIX" required />
                 <input
                     className="text-sm outline-0 border-b border-zinc-300 focus:border-red-500"
                     name="CHAVEPIX"
@@ -203,7 +193,7 @@ export function Form() {
 
             {/* INSTAGRAM */}
             <div className="bg-white rounded-2xl border-zinc-300 border p-4 max-w-3xl flex flex-col gap-4">
-                <Label title="instagram" required />
+                <FormLabel title="instagram" required />
                 <input
                     className="text-sm outline-0 border-b border-zinc-300 focus:border-red-500"
                     name="AD_INSTAGRAMPROFILE"
@@ -231,7 +221,7 @@ export function Form() {
                         checked
                         required
                     />
-                    <Label
+                    <FormLabel
                         title="Aceito as condições do TERMOS E CONDIÇÕES DA CASA
                         CONTENTE PARA PARCERIA DE CASHBACK COM PROFISSIONAIS DE
                         ARQUITETURA E DECORAÇÃO"
