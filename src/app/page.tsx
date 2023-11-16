@@ -300,6 +300,15 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
+
+                <div className="flex justify-end">
+                    <button
+                        className="bg-white px-8 py-4 text-red-500 rounded-2xl border border-zinc-300 shadow-xl hover:bg-zinc-100"
+                        type="submit"
+                    >
+                        Cadastrar
+                    </button>
+                </div>
             </div>
         </div>
     )
